@@ -97,7 +97,7 @@ def running():
         if float(money) >= 50 and int(rating) >10:
             WebDriverWait(driver1, 10).until(
                     EC.presence_of_element_located((By.XPATH, '//*[@id="leftcolumn"]/div[1]/center[2]/a[2]'))).click()
-            
+            time.sleep(3)
             WebDriverWait(driver1, 10).until(
                     EC.presence_of_element_located((By.XPATH, '//*[@id="aj-content"]/form/center/center/center[2]/center/div/button[2]/div/div/div/div'))).click()
             slider = WebDriverWait(driver1, 60).until(
@@ -105,7 +105,8 @@ def running():
             slider_size = slider.size
             offset = slider_size['width'] * 0.5 
             action = ActionChains(driver1)
-            action.click_and_hold(slider).move_by_offset(offset, 0).release().perform()        
+            action.click_and_hold(slider).move_by_offset(offset, 0).release().perform()
+            time.sleep(4)        
             WebDriverWait(driver1, 60).until(
                     EC.presence_of_element_located((By.XPATH, "/html/body/div[8]/table[2]/tbody/tr/td[2]/div/div/div/div/div/div[2]/form/center[2]/input"))).click()
             print("widthdraw successful..")
