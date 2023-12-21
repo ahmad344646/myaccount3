@@ -101,6 +101,8 @@ def running():
                     EC.presence_of_element_located((By.XPATH, '//*[@id="aj-content"]/form/center/center/center[2]/center/div/div[4]/div/div/div/span'))).text
             print(availablty)
             if availablty != "Временно недоступно":
+                WebDriverWait(driver1, 10).until(
+                    EC.presence_of_element_located((By.XPATH, '//*[@id="aj-content"]/form/center/center/center[2]/center/div/div[4]/div/div/div/span'))).click()
                 slider = WebDriverWait(driver1, 60).until(
                         EC.presence_of_element_located((By.NAME, "scrol")))
                 slider_size = slider.size
